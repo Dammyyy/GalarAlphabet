@@ -1,5 +1,10 @@
+@font-face {
+	font-family: 'Galarfont_1';
+	src: url('Galarfont_1-Regular.ttf');
+}
+
 .galar {
-	font-family: "Galarfont_1";
+	font-family: "Galarfont_1", "Galarfont";
 	font-size: 40px;
 }
 
