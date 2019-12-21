@@ -8,6 +8,10 @@
 	font-size: 40px;
 }
 
+body {
+	margin: auto;
+}
+
 <style type="text/css" >
 
 /* === ソートボタンを表示するエリア ============== */
