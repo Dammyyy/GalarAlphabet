@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GalarSpelling</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+	<p style="text-align: center">駅構内で見つけた文字</p>
+	<p class="galar">ABCDEFGHIJKLMNOQRSTUVWXYZ</p>
+	<p class="galar">acdefghiklmnopqru</p>
+
+	<p>・ブラッシータウン/バウタウン/ワイルドエリア/ホワイトヒル駅を『小型駅』とし、</p>
+	<p>・エンジンシティ駅とナックルシティ駅を『大型駅』とする。</p>
+	<table id="sampleTable">
+		<!-- テーブルのIDをJavaScriptに定義します -->
+		<tr>
+			<th></th>
+			<th cmanSortBtn>ガラル文字</th>
+			<th cmanSortBtn>推測</th>
+			<th cmanSortBtn>コメント</th>
+			<th cmanSortBtn>分類</th>
+			<th cmanSortBtn>地域</th>
+		</tr>
+		<tr>
+			<th>511</th>
+			<td class="galar">ABTBDIY</td>
+			<td>STATION</td>
+			<td>小型駅構内の青い看板</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>512</th>
+			<td class="galar">BMSDAFIAK</td>
+			<td></td>
+			<td>小型駅のカウンターの奥のプレート</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>513</th>
+			<td class="galar">CAEFBReY</td>
+			<td></td>
+			<td>小型駅のカウンターの奥の貼り紙1段目</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>514</th>
+			<td class="galar">Rorofin</td>
+			<td>Railway</td>
+			<td>小型駅のカウンターの奥の貼り紙2段目</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>514</th>
+			<td class="galar">BRe</td>
+			<td></td>
+			<td>小型駅のカウンターの奥の貼り紙 <br>表の左上、時間のことか</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>514</th>
+			<td class="galar">CL</td>
+			<td></td>
+			<td>小型駅のカウンターの奥の貼り紙 <br>表の真ん中</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>514</th>
+			<td class="galar">DWeLM</td>
+			<td></td>
+			<td>小型駅のカウンターの奥の貼り紙 <br>表の右上</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>515</th>
+			<td class="galar">OIVE</td>
+			<td></td>
+			<td>小型駅の外のプレート</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>516</th>
+			<td class="galar">CAEFBReYIT</td>
+			<td></td>
+			<td>駅のパンフレットスタンド</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>517</th>
+			<td class="galar">gkdlfok?</td>
+			<td></td>
+			<td>駅のパンフスタンド</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>517</th>
+			<td class="galar">Xcgkdlfok</td>
+			<td></td>
+			<td>駅のポスター右 <br>エンディング後</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">CEUUB</td>
+			<td></td>
+			<td>駅のポスター左 <br>エンディング後</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th>518</th>
+			<td class="galar">Xcgkdlfok aom</td>
+			<td></td>
+			<td>改札上の電光掲示板 左上 <br>アラビア数字が使われている</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>519</th>
+			<td class="galar">idomrqfok aomh</td>
+			<td></td>
+			<td>改札上の電光掲示板 左下</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>520</th>
+			<td class="galar">H aqkrhd aomh</td>
+			<td></td>
+			<td>改札上の電光掲示板</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>521</th>
+			<td class="galar">Nhga idomrq</td>
+			<td></td>
+			<td>改札上の電光掲示板 下の黄色文字</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th>522</th>
+			<td class="galar">cidkaomhq</td>
+			<td></td>
+			<td>改札上の電光掲示板 下の文字</td>
+			<td>その他</td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">UcidkaomhqUci</td>
+			<td></td>
+			<td>駅のフードコート</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">GALAJ BEKCVE</td>
+			<td>GALAR REAGUE</td>
+			<td>駅のサービスカウンター</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Mdrgqdi</td>
+			<td></td>
+			<td>駅の観光案内所？</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">BFRHIAVB OKBKeCOC</td>
+			<td></td>
+			<td>駅のフレンドリィショップ</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">ifcagqn amoqh</td>
+			<td></td>
+			<td>改札の上のプレート</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Clmkin qgd ilorg</td>
+			<td></td>
+			<td>改札上のポスター <br>モンスターボールのやつ</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Ronm lkqdh</td>
+			<td></td>
+			<td>黄色の券売機</td>
+			<td></td>
+			<td>全駅共通</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">NBIHTOFI</td>
+			<td></td>
+			<td>駅のソファー</td>
+			<td></td>
+			<td>大型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Rorohin</td>
+			<td>Railway</td>
+			<td>小型駅の電光掲示板 左1行目</td>
+			<td>その他</td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Xcgkdlfok</td>
+			<td></td>
+			<td>小型駅の電光掲示板 左2行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Agfrl kol</td>
+			<td></td>
+			<td>小型駅の電光掲示板 左3行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Ucidk</td>
+			<td></td>
+			<td>小型駅の電光掲示板 左4行目左</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">aomhqda</td>
+			<td></td>
+			<td>小型駅の電光掲示板 左4行目右</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Haqkrhdakm</td>
+			<td></td>
+			<td>小型駅の電光掲示板 左5行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Ckonrql</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右1行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Haqkrhd</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右2行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Vido mrq</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右3行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">Ucidk</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右4行目左</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">aomhqda</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右4行目右</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar">rhdakmdakm</td>
+			<td></td>
+			<td>小型駅の電光掲示板 右5行目</td>
+			<td></td>
+			<td>小型駅</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>

@@ -5,15 +5,24 @@
 	<meta charset="UTF-8">
 	<title>GalarSpelling</title>
 	<link rel="stylesheet" href="style.css">
-	<!--vv	<script type="text/javascript" src="index.js"></script>-->
+	<script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
-	<p class="galar">ABCDEFGHIJKLMNOQRSTUVWXYZ</p>
+	<p class="galar">ABCDEFGHIJKLMNOeQRSTUVWXYZ</p>
 	<p class="galar">acdefghiklmnopqru</p>
 	<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-	<p></p>
-
+	<p>
+		<a href="GalarSpelling.html">全て</a><br>
+		<a href="Area.html">1~地名</a>
+		<a href="Character.html">21~キャラクター</a>
+		<a href="Uniforme.html">51~ユニフォーム</a>
+		<a href="Company.html">101~企業名</a><br>
+		<a href="Stadium.html">301~スタジアム</a>
+		<a href="Station.html">駅</a>
+		<a href="Sentence.html">文章</a>
+		<a href="Other.html">その他</a>
+	</p>
 	<table id="sampleTable">
 		<!-- テーブルのIDをJavaScriptに定義します -->
 		<tr>
@@ -24,1579 +33,690 @@
 			<th cmanSortBtn>分類</th>
 		</tr>
 		<tr>
-			<th>1</th>
-			<td class="galar">GALAJ</td>
-			<td>GALAR</td>
-			<td>ガラル</td>
-			<td>固有名詞</td>
-		</tr>
-		<tr>
-			<th>2</th>
-			<td class="galar">ROSE</td>
-			<td>ROSE</td>
-			<td>ローズ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>3</th>
-			<td class="galar">MVKTO COENOE</td>
-			<td>MACRO COSMOS</td>
-			<td>マクロコスモス社 <br>Cが合わないのは語頭・中形だからか <br>会社名だから遊び心でもじったのか</td>
-			<td>固有名詞</td>
-		</tr>
-		<tr>
-			<th>4</th>
-			<td class="galar">GVNE JREVM</td>
-			<td>GAME FREAK</td>
-			<td>ゲームフリーク</td>
-			<td>固有名詞</td>
-		</tr>
-		<tr>
-			<th>5</th>
-			<td class="galar">SeeC chqllingi</td>
-			<td>SEED Challenge</td>
-			<td>チャレンジセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>6</th>
-			<td class="galar">WCSh</td>
-			<td>KUSA</td>
-			<td>くさセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>7</th>
-			<td class="galar">BKSe</td>
-			<td>MIZU</td>
-			<td>みずセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>8</th>
-			<td class="galar">IOWO</td>
-			<td>HONO</td>
-			<td>ほのおセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>9</th>
-			<td class="galar">OCET</td>
-			<td>不明</td>
-			<td>ゴーストセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>10</th>
-			<td class="galar">RFESBLO</td>
-			<td>KAKUTOU</td>
-			<td>かくとうセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>11</th>
-			<td class="galar">EHIOT</td>
-			<td>FAIRY</td>
-			<td>フェアリーセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>12</th>
-			<td class="galar">TMY</td>
-			<td>IWA</td>
-			<td>いわセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>13</th>
-			<td class="galar">BDeY</td>
-			<td>不明</td>
-			<td>こおりセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>14</th>
-			<td class="galar">JWE</td>
-			<td>AKU</td>
-			<td>あくセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>15</th>
-			<td class="galar">MLKDUA</td>
-			<td>DRAGON</td>
-			<td>ドラゴンセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>16</th>
-			<td class="galar">CVSLI</td>
-			<td>不明</td>
-			<td>むしセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>17</th>
-			<td class="galar">CYDYUH</td>
-			<td>HAGANE</td>
-			<td>はがねセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>18</th>
-			<td class="galar">IEOeU</td>
-			<td>PSICO(伊)</td>
-			<td>エスパーセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>19</th>
-			<td class="galar">UEXMF</td>
-			<td>DENKI</td>
-			<td>でんきセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>20</th>
-			<td class="galar">LFCBN</td>
-			<td>JIMEN</td>
-			<td>じめんセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>21</th>
-			<td class="galar">XFRUK</td>
-			<td>HIKOU</td>
-			<td>ひこうセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>22</th>
-			<td class="galar">XUTXVF</td>
-			<td>NORMAL</td>
-			<td>ノーマルセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>23</th>
-			<td class="galar">JNHV</td>
-			<td>DOKU</td>
-			<td>どくセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>24</th>
-			<td class="galar">Whodplon</td>
-			<td>Champion</td>
-			<td>チャンピオンセット</td>
-			<td>ユニフォーム</td>
-		</tr>
-		<tr>
-			<th>25</th>
-			<td class="galar">BOEXIH YFF</td>
-			<td>INN</td>
-			<td>スボミーイン<br>英Budew</td>
-			<td>固有名詞</td>
-		</tr>
-		<tr>
-			<th>26</th>
-			<td class="galar">DCVDB</td>
-			<td>DANDE</td>
-			<td>ダンデ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>27</th>
-			<td class="galar">LJOOAW</td>
-			<td>YALLOW</td>
-			<td>ヤロー</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>28</th>
+			<th></th>
 			<td class="galar"></td>
 			<td></td>
-			<td>ルリナ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>29</th>
-			<td class="galar">RVDS</td>
-			<td>KABU</td>
-			<td>カブ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>30</th>
-			<td class="galar">OeeJ</td>
-			<td>BEET</td>
-			<td>ビート</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>31</th>
-			<td class="galar"></td>
-			<td>さいとう <br>SITU(TDN)</td>
-			<td>サイトウ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>31</th>
-			<td class="galar">CeICe</td>
-			<td>ONION</td>
-			<td>オニオン</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>32</th>
-			<td class="galar"></td>
 			<td></td>
-			<td>ポプラ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>33</th>
-			<td class="galar"></td>
 			<td></td>
-			<td>キバナ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>34</th>
-			<td class="galar">N RVBY</td>
-			<td>MAKUWA</td>
-			<td>マクワ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>34</th>
-			<td class="galar">N RVBY</td>
-			<td>MELON</td>
-			<td>メロン</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>35</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>ネズ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>36</th>
-			<td class="galar"></td>
-			<td>HOP</td>
-			<td>ホップ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>37</th>
-			<td class="galar">MVRY</td>
-			<td>MARY</td>
-			<td>マリィ</td>
-			<td>人名</td>
-		</tr>
-		<tr>
-			<th>37</th>
-			<td class="galar">CFSR</td>
-			<td></td>
-			<td>ハロンタウン</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>38</th>
-			<td class="galar">XHEDDY</td>
-			<td>BRASSY</td>
-			<td>ブラッシータウン</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>39</th>
-			<td class="galar">KOYXOH</td>
-			<td>ENGINE</td>
-			<td>エンジンシティ</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>40</th>
-			<td class="galar">VUDF</td>
-			<td>TURF</td>
-			<td>ターフタウン</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>41</th>
-			<td class="galar">WCA</td>
-			<td>BOW</td>
-			<td>バウタウン <br>Bowは船首の意</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>42</th>
-			<td class="galar">MDEBCFA</td>
-			<td>KNUCKLE</td>
-			<td>ナックルシティ <br>Knuckleは関節の意</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>43</th>
-			<td class="galar">TRNBOK</td>
-			<td></td>
-			<td>ラテラルタウン</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>44</th>
-			<td class="galar">LYEXA</td>
-			<td>あらべすく(カナ) <br>ARBSQ(TDN)</td>
-			<td>アラベスクタウン <br>アラベスクは英語で「アラビアの」という意 <br>アラビア語は子音だけを書くアブジャド</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>45</th>
-			<td class="galar">KHMTOR</td>
-			<td>CIRCUS(羅)</td>
-			<td>キルクスタウン <br>戦車競技場</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>46</th>
-			<td class="galar">WSILYJ</td>
-			<td></td>
-			<td>スパイクタウン</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>47</th>
-			<td class="galar">AECIIJT</td>
-			<td></td>
-			<td>シュートシティ</td>
-			<td>地名</td>
-		</tr>
-		<tr>
-			<th>48</th>
-			<td class="galar">WeUTCEKV</td>
-			<td>BOUTIQUE(仏)</td>
-			<td>ブティック(仏)</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>49</th>
-			<td class="galar">Fmc</td>
-			<td></td>
-			<td>ラス</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>50</th>
-			<td class="galar">KSDEV iaLLl</td>
-			<td></td>
-			<td>ヨシダ珈琲</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>51</th>
-			<td class="galar">Vdrthom Rcdor</td>
-			<td></td>
-			<td>グラモフォンレコード</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>52</th>
-			<td class="galar">Edial</td>
-			<td></td>
-			<td>ガラル郵便</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>53</th>
-			<td class="galar">Nhgaidomrq</td>
-			<td></td>
-			<td>美容院</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>54</th>
-			<td class="galar">OeeWNEER</td>
-			<td>BOOKMAAK</td>
-			<td>ブックマーク</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>55</th>
-			<td class="galar">Ciko</td>
-			<td></td>
-			<td>ラプラスマークのとこ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>56</th>
-			<td class="galar">FYWEROBBKI</td>
-			<td></td>
-			<td>ガラル消防署</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>57</th>
-			<td class="galar">WeeFO WOin</td>
-			<td></td>
-			<td>ドッコラー土木</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>58</th>
-			<td class="galar">VUDF OWIN</td>
-			<td>TURF FARM</td>
-			<td>ターフ農園</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>59</th>
-			<td class="galar">Lgrdn f</td>
-			<td></td>
-			<td>ターフジムのスポンサー <br>花のポケモンのやつ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>60</th>
-			<td class="galar">EHHLCCU OWS</td>
-			<td>SEEFOOD BAR</td>
-			<td>レストラン防波亭</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>61</th>
-			<td class="galar">RoralAdci</td>
-			<td></td>
-			<td>ホエルオー水産</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>62</th>
-			<td class="galar">SqH iqTTqR</td>
-			<td>JET SETTER</td>
-			<td>ジェットセッター</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>63</th>
-			<td class="galar">Rod Aion</td>
-			<td></td>
-			<td>ドント ブリスター</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>64</th>
-			<td class="galar">Mdrgqdif</td>
-			<td></td>
-			<td>エンジンジムのスポンサー <br>カブさんが描かれてる</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>65</th>
-			<td class="galar">LIr</td>
-			<td></td>
-			<td>エンジンジムのスポンサー <br>上のポスターの左上にあった</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>66</th>
-			<td class="galar">Clmkin</td>
-			<td></td>
-			<td>アラベスクジムのスポンサー <br>香水</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>67</th>
-			<td class="galar">ULCL</td>
-			<td>FOGO(TDN)</td>
-			<td>レストラン フオグオ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>68</th>
-			<td class="galar">DFDDOBI</td>
-			<td></td>
-			<td>ペリッパー便</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>69</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>ボルチーニ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>70</th>
-			<td class="galar">OKBKeCOC</td>
-			<td></td>
-			<td>キルクスのごはん屋</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>71</th>
-			<td class="galar">Edial laidE</td>
-			<td>Ιωνια(古希)</td>
-			<td>ホテル イオニア</td>
-			<td></td>
-		</tr>
-		<tr>
-			<th>72</th>
-			<td class="galar">GALAJ WNeY</td>
-			<td></td>
-			<td>ガラル鉱産</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>73</th>
-			<td class="galar">DMBRUX ITKCN</td>
-			<td></td>
-			<td>ナックルジムのスポンサー <br>プロテインみたいなやつ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>74</th>
-			<td class="galar">ILNESTA</td>
-			<td></td>
-			<td>テレスクリーン</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>75</th>
-			<td class="galar">Ricgqn Dfkaq</td>
-			<td></td>
-			<td>シュートシティの広告 <br>ルリナのやつ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>76</th>
-			<td class="galar">OXVX M YCHHR</td>
-			<td></td>
-			<td>シュートシティの広告 <br>車のシンボル的なやつ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>77</th>
-			<td class="galar">Edial</td>
-			<td></td>
-			<td>シュートシティの広告</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>78</th>
-			<td class="galar">Acdln Adoqnahln</td>
-			<td></td>
-			<td>シュートシティの広告 <br>ウールーのやつ。服のメーカー</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>79</th>
-			<td class="galar">QCREIS</td>
-			<td>POKJOB</td>
-			<td>ポケジョブ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>80</th>
-			<td class="galar">Ogdqr</td>
-			<td></td>
-			<td>シュートシティの広告 <br>眼鏡の広告</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>81</th>
-			<td class="galar">Ucidkao</td>
-			<td></td>
-			<td>シュートシティの広告</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>82</th>
-			<td class="galar">Nmqol</td>
-			<td></td>
-			<td>シュートシティの広告 <br>ホシガリス</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>83</th>
-			<td class="galar">JCYU RONe</td>
-			<td></td>
-			<td>ロンド ロゼ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>84</th>
-			<td class="galar">VEU</td>
-			<td></td>
-			<td>シュートシティの駅広告 <br>電池？</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>85</th>
-			<td class="galar">CAEF</td>
-			<td></td>
-			<td>シュートシティの駅広告 <br>歯</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>86</th>
-			<td class="galar">DTUTOEF</td>
-			<td></td>
-			<td>シュートモノレール</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>87</th>
-			<td class="galar">CAEF</td>
-			<td></td>
-			<td>シュートシティの駅広告 <br>アイス</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>88</th>
-			<td class="galar">Lmdt qW</td>
-			<td></td>
-			<td>チャンピオンリーグ？のスポンサー</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>89</th>
-			<td class="galar">IKVqorNor</td>
-			<td></td>
-			<td>チャンピオンリーグ？のスポンサー <br>マクロコスモスの中抜けたロゴみたいな</td>
-			<td></td>
-		</tr>
-		<tr>
-			<th>90</th>
-			<td class="galar">AUXWEOY</td>
-			<td></td>
-			<td>チャンピオンリーグ？のスポンサー <br>プーマみたいなやつ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>91</th>
-			<td class="galar">BEFKUT SEVe</td>
-			<td></td>
-			<td>ハガネール車両</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>92</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>アウローラ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>93</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>ヒジキ オカ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>94</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>スパイク商工会</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>95</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>イチバン <br>医者？</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>96</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>ガラル警察署</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>97</th>
-			<td class="galar">AJOS Lgroc</td>
-			<td>YUME</td>
-			<td>ゆめ牧場</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>98</th>
-			<td class="galar">Nhgaidomrq</td>
-			<td></td>
-			<td>シュートシティの広告</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>99</th>
-			<td class="galar">earig Dqh Edial</td>
-			<td></td>
-			<td>77番に同じ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>100</th>
-			<td class="galar">GM</td>
-			<td></td>
-			<td>アーマーガー交通</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>101</th>
-			<td class="galar">eLM</td>
-			<td></td>
-			<td>バンバドロ乗車口</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>102</th>
-			<td class="galar">Vaoq Vldo</td>
-			<td></td>
-			<td>服のメーカー</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>103</th>
-			<td class="galar">ORAWS</td>
-			<td></td>
-			<td>ケーキ？の広告</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>104</th>
-			<td class="galar">MC qtlhn</td>
-			<td></td>
-			<td>MC証券</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>105</th>
-			<td class="galar">FCYU Vkilr</td>
-			<td></td>
-			<td>ロンドフラワーズ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>106</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>マクロネット</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>107</th>
-			<td class="galar">M U</td>
-			<td></td>
-			<td>ナックルユニバーシティ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>108</th>
-			<td class="galar">Rorofin</td>
-			<td>Railway</td>
-			<td>マクロコスモス・レールウェイズ <br>赤色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>109</th>
-			<td class="galar">Kaqhdhga</td>
-			<td></td>
-			<td>マクロコスモス・コンストラクション <br>灰色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>110</th>
-			<td class="galar">Dofk</td>
-			<td>Bank</td>
-			<td>マクロコスモス・バンク <br>緑色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>111</th>
-			<td class="galar">Jfodiqk</td>
-			<td></td>
-			<td>マクロコスモス・ <br>黄色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>112</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>マクロコスモス・テクノロジー <br>黄緑色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>113</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>マクロコスモス・ライフ <br>ピンク</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>114</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>マクロコスモス・エネルギー <br>オレンジ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>115</th>
-			<td class="galar"></td>
-			<td></td>
-			<td>マクロコスモス・エアラインズ <br>青色</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>116</th>
-			<td class="galar">MC rcuaf</td>
-			<td></td>
-			<td>オニオンのジムのスポンサー <br>マクロコスモス系列 <br>ロゴは証券のに似てる</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>117</th>
-			<td class="galar">Ricg qnmq</td>
-			<td></td>
-			<td>オニオンのジムのスポンサー <br>カメラ/2進化目の蟲</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>118</th>
-			<td class="galar">MCR</td>
-			<td>MCR</td>
-			<td>MCR貨物</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>119</th>
-			<td class="galar">WTESHUE ESFJCK</td>
-			<td></td>
-			<td>アルセウス製薬</td>
-			<td></td>
-		</tr>
-		<tr>
-			<th>901</th>
-			<td class="galar">XBeSVHeR</td>
-			<td></td>
-			<td>賞状のとこ</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>902</th>
-			<td class="galar">AKFMVSL</td>
-			<td></td>
-			<td>プレイヤーのとこ</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>903</th>
-			<td class="galar">EX</td>
-			<td></td>
-			<td>下のとこ1 <br>あなたは</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>904</th>
-			<td class="galar">BMSDAFIAK</td>
-			<td></td>
-			<td>下のとこ2 <br>ポケモン図鑑を</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>905</th>
-			<td class="galar">RAWSVEUKLEXRENCAE</td>
-			<td></td>
-			<td>下のとこ3 <br>みごと完成させました！</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>906</th>
-			<td class="galar">KITSNDAN</td>
-			<td></td>
-			<td>下のとこ4 <br>その偉大な</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>907</th>
-			<td class="galar">FBReY</td>
-			<td></td>
-			<td>下のとこ5 <br>功績を</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>908</th>
-			<td class="galar">KRCLS</td>
-			<td></td>
-			<td>下のとこ6 <br>証明</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>909</th>
-			<td class="galar">ODWeK</td>
-			<td></td>
-			<td>下のとこ7 <br>します</td>
-			<td>賞状</td>
-		</tr>
-		<tr>
-			<th>501</th>
-			<td class="galar">RoM TQIiHrk</td>
-			<td>NoW LOAdIng</td>
-			<td>ロード中 <br>大文字と小文字が混ざってる</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>502</th>
-			<td class="galar">Ghman</td>
-			<td>Galar</td>
-			<td>ガラル <br>チャンネル名</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>503</th>
-			<td class="galar">Dcalld</td>
-			<td></td>
-			<td> <br>チャンネル名</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>504</th>
-			<td class="galar">Xahiomc</td>
-			<td></td>
-			<td> <br>チャンネル名</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>505</th>
-			<td class="galar">Ckiaac</td>
-			<td></td>
-			<td> <br>動画タイトル</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>506</th>
-			<td class="galar">Rgaqk</td>
-			<td></td>
-			<td> <br>動画タイトル</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>507</th>
-			<td class="galar">Adhq</td>
-			<td></td>
-			<td> <br>動画タイトル</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>508</th>
-			<td class="galar">Rhgq</td>
-			<td></td>
-			<td>投稿者名</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>601</th>
-			<td class="galar">YFURe</td>
-			<td></td>
-			<td>白い看板の2段目</td>
-			<td>看板</td>
-		</tr>
-		<tr>
-			<th>602</th>
-			<td class="galar">YXRBSKHLDAMU</td>
-			<td></td>
-			<td>白い看板の3段目</td>
-			<td>看板</td>
-		</tr>
-		<tr>
-			<th>509</th>
-			<td class="galar">Khord</td>
-			<td></td>
-			<td>主人公の部屋の箱</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>509</th>
-			<td class="galar">JCYU JVYU</td>
-			<td></td>
-			<td>主人公の部屋のポスター</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>509</th>
-			<td class="galar">XCISFHJ BhLL</td>
-			<td>MONSTER BALL</td>
-			<td>ホップの部屋のポスター</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>510</th>
-			<td class="galar">RLU</td>
-			<td></td>
-			<td>ホップの部屋のタンスの上の箱</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>511</th>
-			<td class="galar">ABTBDIY</td>
-			<td>STATION</td>
-			<td>駅構内の青い看板</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>512</th>
-			<td class="galar">BMSDAFIAK</td>
-			<td></td>
-			<td>ブラッシー駅のカウンターの奥のプレート</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>513</th>
-			<td class="galar">CAEFBReY</td>
-			<td></td>
-			<td>ブラッシー駅のカウンターの奥の貼り紙1段目</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>514</th>
-			<td class="galar">Rorofin</td>
-			<td>Railway</td>
-			<td>ブラッシー駅のカウンターの奥の貼り紙2段目</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>514</th>
-			<td class="galar">BRe</td>
-			<td></td>
-			<td>ブラッシー駅のカウンターの奥の貼り紙 <br>表の左上、時間のことか</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>514</th>
-			<td class="galar">CL</td>
-			<td></td>
-			<td>ブラッシー駅のカウンターの奥の貼り紙 <br>表の真ん中</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>514</th>
-			<td class="galar">DWeLM</td>
-			<td></td>
-			<td>ブラッシー駅のカウンターの奥の貼り紙 <br>表の右上</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>515</th>
-			<td class="galar">OIVE</td>
-			<td></td>
-			<td>ブラッシー駅の外のプレート</td>
-			<td>その他</td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">lfdqlfd</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>きのみショップ</td>
-			<td>会社名</td>
-		</tr>
-		<tr>
-			<th>516</th>
-			<td class="galar">CAEFBReYIT</td>
 			<td></td>
-			<td>駅のパンフレットスタンド</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>517</th>
-			<td class="galar">gkdlfok?</td>
 			<td></td>
-			<td>駅のパンフスタンド</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>517</th>
-			<td class="galar">Xcgkdlfok</td>
-			<td></td>
-			<td>駅のポスター <br>エンディング後</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>518</th>
-			<td class="galar">Xcgkdlfok aom</td>
-			<td></td>
-			<td>駅の電光掲示板 左上 <br>アラビア数字が使われている <br>ブラッシータウン</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>519</th>
-			<td class="galar">idomrqfok aomh</td>
-			<td></td>
-			<td>駅の電光掲示板 左下 <br>ブラッシータウン</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>520</th>
-			<td class="galar">H aqkrhd aomh</td>
-			<td></td>
-			<td>駅の電光掲示板 <br>ブラッシータウン</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>521</th>
-			<td class="galar">Nhga idomrq</td>
-			<td></td>
-			<td>駅の電光掲示板 下の黄色文字 <br>ブラッシータウン</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>522</th>
-			<td class="galar">cidkaomhq</td>
-			<td></td>
-			<td>駅の電光掲示板 下の文字</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>523</th>
-			<td class="galar">Dfkcq</td>
-			<td></td>
-			<td>ポケモンフード <br>エンジンシティのポスター <br>ダンデの部屋の段ボール</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>524</th>
-			<td class="galar">Oignfq</td>
-			<td></td>
-			<td>ポケモンフード <br>大コメント1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>525</th>
-			<td class="galar">gm argqchao</td>
-			<td></td>
-			<td>ポケモンフード <br>1行目</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>526</th>
-			<td class="galar">Bkmorn gld</td>
-			<td></td>
-			<td>ポケモンフード <br>2行目</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>526</th>
-			<td class="galar">fkacr klq</td>
-			<td></td>
-			<td>ポケモンフード <br>メーカー名？</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>527</th>
-			<td class="galar">Nhgaidomrq</td>
-			<td></td>
-			<td>バトルカフェの左メニュータイトル</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>528</th>
-			<td class="galar">Clmkin</td>
-			<td></td>
-			<td>バトルカフェの左メニュー1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>529</th>
-			<td class="galar">Xhdk</td>
-			<td></td>
-			<td>バトルカフェの左メニュー2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>530</th>
-			<td class="galar">Xhlk</td>
-			<td></td>
-			<td>バトルカフェの左メニュー3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>531</th>
-			<td class="galar">Aq</td>
-			<td></td>
-			<td>バトルカフェの左メニュー4</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>532</th>
-			<td class="galar">Ckonrqlilanrcf</td>
-			<td></td>
-			<td>バトルカフェの右メニュータイトル</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>533</th>
-			<td class="galar">Ronmlkqdhgrl</td>
-			<td></td>
-			<td>バトルカフェの右メニュー1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>534</th>
-			<td class="galar">ikmdalihak</td>
-			<td></td>
-			<td>バトルカフェの右メニュー2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>535</th>
-			<td class="galar">Agfrlkolai</td>
-			<td></td>
-			<td>バトルカフェの右メニュー3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>536</th>
-			<td class="galar">Ucidkaomhq</td>
-			<td></td>
-			<td>バトルカフェの右メニュー4</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>537</th>
-			<td class="galar">kdcdkofkqhcao</td>
-			<td></td>
-			<td>バトルカフェの右メニュー5</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>538</th>
-			<td class="galar">Xcgkdlfoli</td>
-			<td></td>
-			<td>バトルカフェの右メニュー6</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>539</th>
-			<td class="galar">Dci</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>540</th>
-			<td class="galar">Clk</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>541</th>
-			<td class="galar">Yig</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>542</th>
-			<td class="galar">Ecg</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？4</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>543</th>
-			<td class="galar">Aq</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？5</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>544</th>
-			<td class="galar">Jqc</td>
-			<td></td>
-			<td>バトルカフェの右メニューの値段？6</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>545</th>
-			<td class="galar">Bm</td>
-			<td></td>
-			<td>バトルカフェの左メニューの値段？1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>546</th>
-			<td class="galar">Sno</td>
-			<td></td>
-			<td>バトルカフェの左メニューの値段？2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>547</th>
-			<td class="galar">ohd</td>
-			<td></td>
-			<td>バトルカフェの左メニューの値段？3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>548</th>
-			<td class="galar">gio</td>
-			<td></td>
-			<td>バトルカフェの左メニューの値段？4</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>550</th>
-			<td class="galar">Riqch</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章1</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>551</th>
-			<td class="galar">Kdq</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>552</th>
-			<td class="galar">Dhkm</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>553</th>
-			<td class="galar">eocd</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章4</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>554</th>
-			<td class="galar">Fmodn</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章5</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>555</th>
-			<td class="galar">Hkd</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章6</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>556</th>
-			<td class="galar">Lrlqc</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章7</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>557</th>
-			<td class="galar">Dci</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章8</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>558</th>
-			<td class="galar">Xh</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章9</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>559</th>
-			<td class="galar">Rlq</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章10</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>560</th>
-			<td class="galar">Kgcrmfki</td>
-			<td></td>
-			<td>コーヒー屋の左メニューの文章11</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>561</th>
-			<td class="galar">Dqhir</td>
-			<td></td>
-			<td>美容院の中、ハサミの左 <br>美容院の名前はこっちかも</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>562</th>
-			<td class="galar">aolmaf</td>
-			<td></td>
-			<td>美容院の中、ハサミの右 <br>美容院の名前はこっちかも</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>563</th>
-			<td class="galar">Khord</td>
-			<td></td>
-			<td>美容院、関係者口？</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>564</th>
-			<td class="galar">AEF</td>
-			<td></td>
-			<td>レコード屋の掘り出し物1</td>
-			<td></td>
-		</tr>
-		<tr>
-			<th>565</th>
-			<td class="galar">REH</td>
-			<td></td>
-			<td>レコード屋の掘り出し物2</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>566</th>
-			<td class="galar">GTKB</td>
-			<td></td>
-			<td>レコード屋の掘り出し物3</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>567</th>
-			<td class="galar">AWSVE</td>
-			<td></td>
-			<td>レコード屋の扉の札</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>568</th>
-			<td class="galar">Wclr</td>
-			<td></td>
-			<td>美容院の外ガラス1段目 <br>レジの盾にも同じ文字</td>
-			<td>その他</td>
-		</tr>
-		<tr>
-			<th>600</th>
-			<td class="galar">RLDEIM</td>
-			<td></td>
-			<td>スタジアム <br>STADIUMだと文字数合わない</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>601</th>
-			<td class="galar">SeeC chllingi</td>
-			<td>SEED challenge</td>
-			<td>スタジアムのメインモニター</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>602</th>
-			<td class="galar">REYFBE OIVECX</td>
-			<td>REAGUE ~~</td>
-			<td>スタジアムのメインモニター</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>603</th>
-			<td class="galar">Whtdglon DVJ</td>
-			<td>Champion CUP</td>
-			<td>チャンピオンリーグ中の垂れ幕 <br>ポスター</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>604</th>
-			<td class="galar">AFIA TKRC</td>
-			<td></td>
-			<td>スタジアムの左通用口</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>605</th>
-			<td class="galar">WSV TKRC</td>
-			<td></td>
-			<td>スタジアムの右通用口</td>
-			<td>スタジアム</td>
-		</tr>
-		<tr>
-			<th>606</th>
-			<td class="galar">Nhgaid Lorda</td>
-			<td></td>
-			<td>更衣室</td>
-			<td>スタジアム</td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">ATU MAI LRE</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>緑の看板、上の白いとこ</td>
-			<td>看板</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">OFDNJ</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>緑の看板、メイン</td>
-			<td>看板</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">SVECHM</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>緑の看板、2段目</td>
-			<td>看板</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">RHe?E DVSON AEFI</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>緑の看板、最下段</td>
-			<td>看板</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td class="galar">Lgron</td>
+			<td class="galar"></td>
 			<td></td>
-			<td>預かり屋さん</td>
-			<td>会社名</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<th>801</th>
-			<td class="galar">REYFBEO</td>
+			<th></th>
+			<td class="galar"></td>
 			<td></td>
-			<td>バウタウンのポスター左、1段目</td>
-			<td>その他</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<th>802</th>
-			<td class="galar">mrih LMeJ</td>
+			<th></th>
+			<td class="galar"></td>
 			<td></td>
-			<td>バウタウンのポスター左、2段目</td>
-			<td>その他</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<th>803</th>
-			<td class="galar">IMFSFHL</td>
+			<th></th>
+			<td class="galar"></td>
 			<td></td>
-			<td>バウタウンのポスター右、1段目</td>
-			<td>その他</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<th>804</th>
-			<td class="galar">mrih</td>
+			<th></th>
+			<td class="galar"></td>
 			<td></td>
-			<td>バウタウンのポスター右、2段目</td>
-			<td>その他</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<th>805</th>
-			<td class="galar">CAEFBR</td>
+			<th></th>
+			<td class="galar"></td>
 			<td></td>
-			<td>防波亭の看板</td>
-			<td>その他</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="galar"></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<th></th>
@@ -1635,4 +755,8 @@
 		</tr>
 
 	</table>
-</body></html>
+</body>
+<script type="text/javascript">
+	footer();
+
+</script>
