@@ -6,10 +6,20 @@
 .galar {
 	font-family: "Galarfont_1", "Galarfont";
 	font-size: 40px;
+	margin: 0 auto;
+}
+
+p.galar {
+	padding: 10px;
 }
 
 body {
-	margin: auto;
+	margin: 10px auto;
+	max-width: 90%;
+}
+
+p {
+	text-align: center;
 }
 
 <style type="text/css" >
