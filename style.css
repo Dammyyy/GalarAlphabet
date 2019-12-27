@@ -33,10 +33,11 @@ table {
 
 html {
 	text-align: center;
+	font-family: sans-serif, monospace, 'メイリオ', '游ゴシック';
 }
 
 header {
-	max-width: 800px;
+	max-width: 960px;
 	/*	position: fixed;*/
 	top: 0;
 	left: 0;
@@ -57,6 +58,7 @@ li {
 	display: inline-block;
 	width: 30%;
 	font-size: 16px;
+	font-weight: bold;
 }
 
 h1 {
@@ -69,6 +71,7 @@ p {
 
 table {
 	margin: 10px auto;
+	/*	padding: 5px*/
 }
 
 <style type="text/css" >
