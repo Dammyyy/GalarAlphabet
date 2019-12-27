@@ -9,27 +9,75 @@
 	margin: 0 auto;
 }
 
-p.galar {
-	padding: 10px;
+html,
+header,
+body,
+a,
+ul,
+li,
+table,
+img {
+	margin: 0 auto;
+	padding: 0;
+}
+
+a {
+	color: white;
+}
+
+table {
+	margin: 10px;
+	text-align: center;
+	max-width: 960px;
+}
+
+html {
+	text-align: center;
+}
+
+header {
+	max-width: 800px;
+	/*	position: fixed;*/
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 body {
-	margin: 10px auto;
-	max-width: 90%;
+	padding-bottom: 50px;
+}
+
+ul {
+	font-size: 0;
+}
+
+li {
+	color: white;
+	background-color: #99ccff;
+	display: inline-block;
+	width: 30%;
+	font-size: 16px;
+}
+
+h1 {
+	margin-bottom: 8px
 }
 
 p {
-	text-align: center;
+	padding-bottom: 8px;
+}
+
+table {
+	margin: 10px auto;
 }
 
 <style type="text/css" >
 
-/* === ソートボタンを表示するエリア ============== */
+/* ソートボタンを表示するエリア */
 .tsImgArea {
 	line-height: 1;
 }
 
-/* === ソートボタン ============================== */
 .tsImg {
 	display: inline-block;
 	width: 8px;
@@ -41,40 +89,32 @@ p {
 	cursor: pointer;
 }
 
-/* === ソートボタン（カーソルオーバー時）========= */
 .tsImg:hover {
 	background: #FFD700;
 }
 
-/* === ソートボタン内の三角の色（SVG）============ */
 .tsImg path {
 	fill: #777;
 }
 
-
 /* --- （参考）テーブル全体のスタイル指定 ------- */
 #sampleTable {
-	width: 100%;
+	width: 90%;
 	border-collapse: collapse;
 	/* 境界線結合 */
 	border-spacing: 0;
 	/* 罫線間余白 */
-	font-size: 9pt;
+	font-size: 11pt;
 	/* 文字サイズ */
 }
 
 /* --- ヘッダーのスタイル指定 ------------------- */
 #sampleTable th {
 	text-align: center;
-	/* 文字位置   */
 	font-weight: bold;
-	/* 太文字     */
 	padding: 6px 5px;
-	/* 余白       */
 	border: 1px #666666 solid;
-	/* 罫線       */
 	background: #99ccff;
-	/* 背景色     */
 	white-space: nowrap;
 }
 
