@@ -21,15 +21,7 @@ img {
 	padding: 0;
 }
 
-a {
-	color: white;
-}
 
-table {
-	margin: 10px;
-	text-align: center;
-	max-width: 960px;
-}
 
 html {
 	text-align: center;
@@ -37,15 +29,25 @@ html {
 }
 
 header {
-	max-width: 960px;
+	/*	max-width: 960px;*/
 	/*	position: fixed;*/
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
+}
+
+header a {
+	color: white;
 }
 
 body {
-	padding-bottom: 50px;
+	/*	margin-bottom: 50px;*/
+}
+
+table {
+	margin: 10px;
+	text-align: center;
+	max-width: 960px;
 }
 
 ul {
@@ -57,7 +59,7 @@ li {
 	background-color: #99ccff;
 	display: inline-block;
 	width: 30%;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
@@ -74,9 +76,51 @@ table {
 	/*	padding: 5px*/
 }
 
+.comment p {
+	padding: 0;
+	margin: 0;
+}
+
+.end {
+	margin-bottom: 15px;
+}
+
+footer {
+	display: block;
+	background-color: #99ccff;
+	width: 100%;
+}
+
+.footer_container {
+	display: block;
+	position: relative;
+	padding: 10px 0px 5px 0px;
+	color: white;
+	max-width: 925px;
+	width: 100%;
+	margin: auto;
+	margin-top: 15px;
+	height: 30px
+}
+
+footer .left {
+	float: left;
+	margin-left: 200px;
+}
+
+footer .right {
+	float: right;
+	margin-right: 160px;
+	px
+}
+
+.comment {
+	margin-top: 15px;
+}
+
 <style type="text/css" >
 
-/* ソートボタンを表示するエリア */
+/* ==================ソートボタン====================== */
 .tsImgArea {
 	line-height: 1;
 }
@@ -100,18 +144,15 @@ table {
 	fill: #777;
 }
 
-/* --- （参考）テーブル全体のスタイル指定 ------- */
+/* テーブル全体のスタイル */
 #sampleTable {
 	width: 90%;
 	border-collapse: collapse;
-	/* 境界線結合 */
 	border-spacing: 0;
-	/* 罫線間余白 */
 	font-size: 11pt;
-	/* 文字サイズ */
 }
 
-/* --- ヘッダーのスタイル指定 ------------------- */
+/* ヘッダーのスタイル */
 #sampleTable th {
 	text-align: center;
 	font-weight: bold;
@@ -121,14 +162,11 @@ table {
 	white-space: nowrap;
 }
 
-/* --- 明細のスタイル指定 ----------------------- */
+/* 明細のスタイル */
 #sampleTable td {
 	text-align: center;
-	/* 文字位置   */
 	padding: 6px 5px;
-	/* 余白       */
 	border: 1px #666666 solid;
-	/* 罫線       */
 	white-space: nowrap;
 }
 
