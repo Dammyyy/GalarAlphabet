@@ -11,9 +11,10 @@ var gSortBtnRow = 0;
 //===============================================================
 //  オンロードでテーブル初期設定関数をCALL
 //===============================================================
-window.onload = function () {
+//window.onload = function () {
+window.addEventListener('load', function () {
 	tSortInit();
-}
+})
 
 function tSortInit() {
 	//===============================================================
