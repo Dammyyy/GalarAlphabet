@@ -35,7 +35,7 @@ html {
 header {
 	top: 0;
 	position: sticky;
-	padding: 20px 10px 10px 20px;
+	padding: 40px 0 0 40px;
 	/*	left: 0;*/
 	/*	right: 0;*/
 	/*	background-color: #027DC3;*/
@@ -152,10 +152,10 @@ header {}
 #nav-open span:before,
 #nav-open span:after {
 	position: absolute;
-	height: 3px;
 	/*線の太さ*/
-	width: 25px;
+	height: 6px;
 	/*長さ*/
+	width: 48px;
 	border-radius: 3px;
 	background: #555;
 	display: block;
@@ -164,11 +164,11 @@ header {}
 }
 
 #nav-open span:before {
-	bottom: -8px;
+	bottom: -16px;
 }
 
 #nav-open span:after {
-	bottom: -16px;
+	bottom: -32px;
 }
 
 /*閉じる用の薄黒カバー*/
