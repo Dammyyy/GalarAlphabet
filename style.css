@@ -34,9 +34,12 @@ html {
 
 header {
 	top: 0;
-	left: 0;
-	right: 0;
-	background-color: #027DC3;
+	position: sticky;
+	padding: 20px 10px 10px 20px;
+	/*	left: 0;*/
+	/*	right: 0;*/
+	/*	background-color: #027DC3;*/
+	/*	background: skyblue;*/
 }
 
 header a {
@@ -50,7 +53,7 @@ body {}
 table {
 	margin: 10px;
 	text-align: center;
-	max-width: 960px;
+	/*	max-width: 960px;*/
 }
 
 ul {
@@ -94,91 +97,41 @@ table {
 	margin-bottom: 15px;
 }
 
+/*
 .footer_container {
 	display: block;
 	position: relative;
 	padding: 10px 0px 5px 0px;
-	color: white;
 	max-width: 925px;
 	width: 100%;
 	margin: auto;
 	margin-top: 15px;
 	height: 30px
 }
+*/
 
 footer {
-	display: block;
+	color: white;
+	margin-top: 40px;
+	bottom: 0;
+	position: sticky display: block;
 	background-color: #027DC3;
-	width: 100%;
+	/*	width: 100%;*/
 }
 
-footer .left {
-	float: left;
-	margin-left: 200px;
+footer div a {
+	color: white;
+	/*	text-decoration: none;*/
 }
 
-footer .right {
-	float: right;
-	margin-right: 160px;
-	px
-}
 
-/* ==================ソートボタン====================== */
-.tsImgArea {
-	line-height: 1;
-}
 
-.tsImg {
-	display: inline-block;
-	width: 8px;
-	height: 6px;
-	background: #eee;
-	border: 1px solid #777;
-	margin: 1px 3px;
-	padding: 3px;
-	cursor: pointer;
-}
-
-.tsImg:hover {
-	background: #FFD700;
-}
-
-.tsImg path {
-	fill: #777;
-}
-
-#sampleTable {
-	width: 90%;
-	border-collapse: collapse;
-	border-spacing: 0;
-	font-size: 11pt;
-}
-
-#sampleTable th {
-	text-align: center;
-	font-weight: bold;
-	padding: 6px 5px;
-	border: 1px #666666 solid;
-	background: #99ccff;
-	white-space: nowrap;
-}
-
-#sampleTable td {
-	text-align: center;
-	padding: 6px 5px;
-	border: 1px #666666 solid;
-	white-space: nowrap;
-}
-
-/***********************************************/
 /*ヘッダーまわりはサイトに合わせて調整してください*/
-header {
-	padding: 10px;
-	background: skyblue;
-}
+header {}
 
 #nav-drawer {
 	position: relative;
+	text-align: left
 }
 
 /*チェックボックス等は非表示に*/
@@ -269,3 +222,52 @@ header {
 	/*中身を表示（右へスライド）*/
 	box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
 }
+
+/* ==================ソートボタン====================== */
+.tsImgArea {
+	line-height: 1;
+}
+
+.tsImg {
+	display: inline-block;
+	width: 8px;
+	height: 6px;
+	background: #eee;
+	border: 1px solid #777;
+	margin: 1px 3px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+.tsImg:hover {
+	background: #FFD700;
+}
+
+.tsImg path {
+	fill: #777;
+}
+
+#sampleTable {
+	width: 90%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 11pt;
+}
+
+#sampleTable th {
+	text-align: center;
+	font-weight: bold;
+	padding: 6px 5px;
+	border: 1px #666666 solid;
+	background: #99ccff;
+	white-space: nowrap;
+}
+
+#sampleTable td {
+	text-align: center;
+	padding: 6px 5px;
+	border: 1px #666666 solid;
+	white-space: nowrap;
+}
+
+/***********************************************/
