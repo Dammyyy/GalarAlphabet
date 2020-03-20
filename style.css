@@ -147,7 +147,7 @@ header {}
 	vertical-align: middle;
 }
 
-/*ハンバーガーアイコンをCSSだけで表現*/
+/*ハンバーガーアイコン*/
 #nav-open span,
 #nav-open span:before,
 #nav-open span:after {
