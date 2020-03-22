@@ -268,7 +268,7 @@ header {}
 	padding: 6px 5px;
 	border: 1px #666666 solid;
 	white-space: nowrap;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #sampleTable .galar {
@@ -276,7 +276,7 @@ header {}
 	padding: 6px 5px;
 	border: 1px #666666 solid;
 	white-space: nowrap;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
