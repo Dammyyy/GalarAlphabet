@@ -193,33 +193,33 @@ header {}
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 9999;
 	/*最前面に*/
-	width: 90%;
+	z-index: 9999;
 	/*右側に隙間を作る（閉じるカバーを表示）*/
-	max-width: 330px;
+	width: 90%;
 	/*最大幅（調整してください）*/
+	max-width: 330px;
 	height: 100%;
-	background: #fff;
 	/*背景色*/
-	transition: .3s ease-in-out;
+	background: #fff;
 	/*滑らかに表示*/
+	transition: .3s ease-in-out;
 	-webkit-transform: translateX(-105%);
-	transform: translateX(-105%);
 	/*左に隠しておく*/
+	transform: translateX(-105%);
 }
 
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {
-	display: block;
 	/*カバーを表示*/
+	display: block;
 	opacity: .5;
 }
 
 #nav-input:checked ~ #nav-content {
 	-webkit-transform: translateX(0%);
-	transform: translateX(0%);
 	/*中身を表示（右へスライド）*/
+	transform: translateX(0%);
 	box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
 }
 
