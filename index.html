@@ -1,67 +1,181 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-	<meta charset="UTF-8">
-	<title>ガラル文字データベース</title>
-	<link rel="stylesheet" href="style.css">
-	<script type="text/javascript" src="index_table.js"></script>
-	<!-- <script type="text/javascript" src="index.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-</head>
-<script>
-	$(function(){
-		$("#header").load("header.html");
-		$("#footer").load("footer.html");
-	})
-</script>
-<div id="header"></div>
+	<head>
+		<meta charset="UTF-8">
+		<title>ガラル文字データベース</title>
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="index_table.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+	</head>
 
-		<div class="main_contents">
-			<div id="table"></div>
+	<script>
+		$(function(){
+			$("#area").load("Area.html");
+			$("#character").load("Character.html");
+			$("#company").load("Company.html");
+			$("#sentence").load("Sentence.html");
+			$("#station").load("Station.html");
+			$("#stadium").load("Stadium.html");
+			$("#other").load("Other.html");
+			$("#uniforme").load("Uniforme.html");
+		})
+	</script>
+
+	<header>	
+		<div id="nav-drawer">
+			<input id="nav-input" type="checkbox" class="nav-unshown">
+			<label id="nav-open" for="nav-input"><span></span></label>
+			<label class="nav-unshown" id="nav-close" for="nav-input"></label>
+			<div id="nav-content">
+				<nav>
+					<ul>
+						<li><a href="index.html">全て</a></li>
+						<li><a href="?id=area">地名</a></li>
+						<li><a href="?id=character">キャラクター</a></li>
+						<li><a href="?id=uniforme">ユニフォーム</a></li>
+						<li><a href="?id=company">企業名</a></li>
+						<li><a href="?id=stadium">スタジアム</a></li>
+						<li><a href="?id=station">駅</a></li>
+						<li><a href="?id=sentence">文章</a></li>
+						<li><a href="?id=other">その他</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<body>
+		<div>
+			<div>
+				<h1 class="title">
+					ガラル文字データベース<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-hashtags="ガラル文字">ツイート</a>
+					<script>
+						! function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0],
+								p = /^http:/.test(d.location) ? 'http' : 'https';
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = p + '://platform.twitter.com/widgets.js';
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, 'script', 'twitter-wjs');
+					</script>
+				</h1>
+			</div>
+			<div class="alphabet">
+				<p>大文字：<span class="galar">ABCDEFGHIJKLMNOeQRSTUVWXYZ</span></p>
+				<p>小文字：<span class="galar">acdfghiklmnopqru</span></p>
+			</div>
+
+			<div class="comment">
+				<p>ガラル地方で発見した文字を表にしました。</p>
+				<p>情報などコメントが御座いましたら<a href="https://twitter.com/Damo_drums">Twitter</a>まで</p>
+			</div>
+
+			<script type="text/javascript">
+			// URLのパラメータを取得
+			var urlParam = location.search.substring(1);
+			// URLにパラメータが存在する場合
+			if(urlParam) {
+			  // 「&」が含まれている場合は「&」で分割
+			  var param = urlParam.split('&');
+			 
+			  // パラメータを格納する用の配列を用意
+			  var paramArray = [];
+			 
+			  // 用意した配列にパラメータを格納
+			  for (i = 0; i < param.length; i++) {
+			    var paramItem = param[i].split('=');
+			    paramArray[paramItem[0]] = paramItem[1];
+			  }
+			  // パラメータidを判断する
+			  if (paramArray.id == 'area') {
+				  document.write('<div id="area"></div>');
+				}
+			  if (paramArray.id == 'character') {
+				  document.write('<div id="character"></div>');
+				}
+			  if (paramArray.id == 'uniforme') {
+				  document.write('<div id="uniforme"></div>');
+				}
+			  if (paramArray.id == 'company') {
+				  document.write('<div id="company"></div>');
+				}
+			  if (paramArray.id == 'stadium') {
+				  document.write('<div id="stadium"></div>');
+				}
+			  if (paramArray.id == 'station') {
+				  document.write('<div id="station"></div>');
+				}
+			  if (paramArray.id == 'sentence') {
+				  document.write('<div id="sentence"></div>');
+				}
+			  if (paramArray.id == 'other') {
+				  document.write('<div id="other"></div>');
+				}
+			} else {
+			  document.write('<div id="table"></div>');
+			}
+			</script>
+
 			<div>
 				<h3>薄明の翼５話の書類の文面</h3>
 				<div class="galar">
 					<p>
-						Mdrg
-
-						BMSDAFIAKORAWSVEUKLEXREeNqarko
-						OYFREHFLUNIHCAKFMVSLIeAHIBgkrfUrkqd
-						IV ECXeNKeSTKBLKUIe IMFSFHLCRSEKBe
-						ASKXBeSVHeRakikmdalihakkofkqhcao
-						EXREeNqarkoRonmlkqdhgrlkdcdicrdra
-						BMSDAFIAKORAWSVEUKLEXREeNqarkoVE
-						CAEFBReYITKRCLS SNODWeLMeYCkonrqlila
-						Xcgkdlfokicrdralonahdokqiaiakdaonlk
-						N CRS oROqark Snoorkdaofakdkolaicidk
-						fmkdkolaicidkXBeSVHeRakikmdalihakkof
-						NqarkoVEUKLEXREeEeNqarkoRonmlkqdhkqhcao
-						SnoorkdaoDAFIRS oRoqark AKORAWSVEiakd
-						SNODWeLMeYCkonrqlilaFBReYITKRCLSaonlk
-						grlkdcdicrdrakdlfokicrdralonahdokqia
-						M
-						konrcIFLUNIHCAKFMVSLIeAHIBgkrfU
-						IVNqarkgkdeSidLKUIeIMFSFHLCRSE
-						ASKXBeSVHeRakdaodaliXeNKoRofkqh
-						kdlfokicrWSBqdhgBMSDronmlklkdcd
-						EC oRoqAKTKBoorkEUKLEXREeNqarkoV
-						CAEFBReYITKRCLSSNODWeDAFIOYFRE
-						XcqdAlfokicrdralonahdokqiaiakd
-						N CRS oRoqark Snoorkdaofmkdkolai
-						XBeSV
-						NqarkoVEUKLEXREeEeNqarkoRonmlkq
-						DAFIRSarkSnFIAKORLMeYCORAWSVBMS
-						SMODWeLMeYCkonrqlilaFBReYITKRC
-						Grlkdcdicrdrakolcifmkddralonah
-						SNODQ
+						Mdrg<br>
+						<br>
+						BMSDAFIAKORAWSVEUKLEXREeNqarko<br>
+						OYFREHFLUNIHCAKFMVSLIeAHIBgkrfUrkqd<br>
+						IV ECXeNKeSTKBLKUIe IMFSFHLCRSEKBe<br>
+						ASKXBeSVHeRakikmdalihakkofkqhcao<br>
+						EXREeNqarkoRonmlkqdhgrlkdcdicrdra<br>
+						BMSDAFIAKORAWSVEUKLEXREeNqarkoVE<br>
+						CAEFBReYITKRCLS SNODWeLMeYCkonrqlila<br>
+						Xcgkdlfokicrdralonahdokqiaiakdaonlk<br>
+						N CRS oROqark Snoorkdaofakdkolaicidk<br>
+						fmkdkolaicidkXBeSVHeRakikmdalihakkof<br>
+						NqarkoVEUKLEXREeEeNqarkoRonmlkqdhkqhcao<br>
+						SnoorkdaoDAFIRS oRoqark AKORAWSVEiakd<br>
+						SNODWeLMeYCkonrqlilaFBReYITKRCLSaonlk<br>
+						grlkdcdicrdrakdlfokicrdralonahdokqia<br>
+						<br>
+						M<br>
+						<br>
+						konrcIFLUNIHCAKFMVSLIeAHIBgkrfU<br>
+						IVNqarkgkdeSidLKUIeIMFSFHLCRSE<br>
+						ASKXBeSVHeRakdaodaliXeNKoRofkqh<br>
+						kdlfokicrWSBqdhgBMSDronmlklkdcd<br>
+						EC oRoqAKTKBoorkEUKLEXREeNqarkoV<br>
+						CAEFBReYITKRCLSSNODWeDAFIOYFRE<br>
+						XcqdAlfokicrdralonahdokqiaiakd<br>
+						N CRS oRoqark Snoorkdaofmkdkolai<br>
+						XBeSV<br>
+						NqarkoVEUKLEXREeEeNqarkoRonmlkq<br>
+						DAFIRSarkSnFIAKORLMeYCORAWSVBMS<br>
+						SMODWeLMeYCkonrqlilaFBReYITKRC<br>
+						Grlkdcdicrdrakolcifmkddralonah<br>
+						SNODQ<br>
 						Nqarko
 				</div>
 			</div>
+
+			<div class="comment end">
+				<h2>著作権について</h2>
+				<p>このページでは、株式会社ゲームフリークを代表とする<br>共同著作者が権利を所有する画像を利用しております。</p>
+				<p>当該画像の転載・配布は禁止いたします。</p>
+				<p>その他、掲載している画像・台詞は、著作権法第32条に基づく引用であり、<br>著作権は作者及び出版社にあります。</p>
+				<p>また、自作フォントにつきましても、転載・配布は禁止いたします。</p>
+				<p>本フォントにより生じた損害に関しては責任を負いません。</p>
+			</div>
 		</div>
 
-<div id="footer"></div>
-</body>
+		<footer>
+			<div>Copyright(c) ダモ ：<a href="https://twitter.com/Damo_drums">@Damo_drums</a></div>
+		</footer>
 
+	</body>
 </html>
