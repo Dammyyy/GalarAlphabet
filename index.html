@@ -21,6 +21,7 @@
 			$("#stadium").load("Stadium.html");
 			$("#other").load("Other.html");
 			$("#uniforme").load("Uniforme.html");
+			$("#twilightwings").load("TwilightWings.html");
 		})
 	</script>
 
@@ -33,6 +34,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">全て</a></li>
+						<li><a href="?id=twilightwings">薄明の翼</a></li>
 						<li><a href="?id=area">地名</a></li>
 						<li><a href="?id=character">キャラクター</a></li>
 						<li><a href="?id=uniforme">ユニフォーム</a></li>
@@ -93,6 +95,9 @@
 			    paramArray[paramItem[0]] = paramItem[1];
 			  }
 			  // パラメータidを判断する
+			  if (paramArray.id == 'twilightwings') {
+				  document.write('<div id="twilightwings"></div>');
+				}
 			  if (paramArray.id == 'area') {
 				  document.write('<div id="area"></div>');
 				}
