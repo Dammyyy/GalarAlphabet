@@ -84,7 +84,6 @@ window.addEventListener('load', function () {
 		// 鎧の孤島
 		["", "ABTBDIY", "STATION", "", "鎧の孤島 駅の黄色い看板"],
 		["", "BMSDAFIAK", "", "", "鎧の孤島 駅内ショップの茶色の看板"],
-		["", "", "", "", "鎧の孤島 駅内ショップの茶色の看板"],
 		
 		//地名
 		["", "GALAJ", "GALAR", "ガラル", "地名"],
