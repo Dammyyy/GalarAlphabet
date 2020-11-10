@@ -211,6 +211,7 @@ window.addEventListener('load', function () {
 		["","SeeC chqllingi","SEED challenge","ホップの部屋のポスター",""],
 		["","VECXeNK","","リーグカードのデザイン",""],
 		["","REHFLU","","リーグカードのデザイン",""],
+
 		//薄明の翼
 		["", "DNoM hqlJNo", "", "ダンデのポスター上", "薄明の翼1話"],
 		["", "Jq? OrfkoM", "", "ダンデのポスター下", "薄明の翼1話"],
@@ -496,6 +497,26 @@ window.addEventListener('load', function () {
 		["", "JNHV", "DOKU", "どくセット", "ユニフォーム"],
 		["", "Whtdplon", "Champion", "チャンピオンセット", "ユニフォーム"],
 		
+		// 賞状
+		["","XBeSVHeR","","ポケモン図鑑完成の賞状 賞状","賞状"],
+		["","AKFMVSL","","ポケモン図鑑完成の賞状 プレイヤー","賞状"],
+		["","EX BMSDAFIAK RAWSVEUKLEXRENCAE KITSNDAN","","ポケモン図鑑完成の賞状 賞状下部の文・上","賞状"],
+		["","FBReY KRCLS ODWeK","","ポケモン図鑑完成の賞状 賞状下部の文・下","賞状"],
+		["","GALAJ BEKCVE","GALAR LEAGUE","ポケモン図鑑完成の賞状 賞状左下の封蝋","賞状"],
+		["","GVNE JREVM","GAME FREAK","ポケモン図鑑完成の賞状 賞状右下のロゴ","賞状"],
+		["","XBeSVHeR","","ヨロイ島図鑑完成の賞状 賞状","賞状"],
+		["","AKFMVSL","","ヨロイ島図鑑完成の賞状 プレイヤー","賞状"],
+		["","EX BMSDAFIAK RAWSVEUKLEXRENCAE KITSNDAN","","ヨロイ島図鑑完成の賞状 賞状下部の文・上","賞状"],
+		["","FBReY KRCLS ODWeK","","ヨロイ島図鑑完成の賞状 賞状下部の文・下","賞状"],
+		["","GALAJ BEKCVE","GALAR LEAGUE","ヨロイ島図鑑完成の賞状 賞状左下の封蝋","賞状"],
+		["","GVNE JREVM","GAME FREAK","ヨロイ島図鑑完成の賞状 賞状右下のロゴ","賞状"],
+		["","XBeSVHeR","","カンムリ雪原図鑑完成の賞状 賞状","賞状"],
+		["","AKFMVSL","","カンムリ雪原図鑑完成の賞状 プレイヤー","賞状"],
+		["","EX BMSDAFIAK RAWSVEUKLEXRENCAE KITSNDAN","","カンムリ雪原図鑑完成の賞状 賞状下部の文・上","賞状"],
+		["","FBReY KRCLS ODWeK","","カンムリ雪原図鑑完成の賞状 賞状下部の文・下","賞状"],
+		["","GALAJ BEKCVE","GALAR LEAGUE","カンムリ雪原図鑑完成の賞状 賞状左下の封蝋","賞状"],
+		["","GVNE JREVM","GAME FREAK","カンムリ雪原図鑑完成の賞状 賞状右下のロゴ","賞状"],
+
 		//会社名
 		["", "QCREIS", "POKJOB", "ポケジョブ", "会社名"],
 		["", "MVKTO COENOE", "MACRO COSMOS", "マクロコスモス社 <br>MとCが合わないのは語頭・語中形だからか <br>会社名だから遊び心でもじったのか", "会社名"],
@@ -584,15 +605,6 @@ window.addEventListener('load', function () {
 		["", "Agfrlk", "", "キルクスジムのスポンサー", "会社名"],
 
 		//文章
-		["", "XBeSVHeR", "", "賞状のとこ", "賞状"],
-		["", "AKFMVSL", "", "プレイヤーのとこ", "賞状"],
-		["", "EX", "", "下のとこ1", "賞状"],
-		["", "BMSDAFIAK", "", "下のとこ2", "賞状"],
-		["", "RAWSVEUKLEXRENCAE", "", "下のとこ3", "賞状"],
-		["", "KITSNDAN", "", "下のとこ4", "賞状"],
-		["", "FBReY", "", "下のとこ5", "賞状"],
-		["", "KRCLS", "", "下のとこ6", "賞状"],
-		["", "ODWeK", "", "下のとこ7", "賞状"],
 		["", "SNODWeLMeJ", "", "エンジンシティのポスター <br> キョダイマックスリザードン<br>１行目", ""],
 		["", "LEXREeN", "", "エンジンシティのポスター <br>２行目", ""],
 		["", "AKORAW", "", "エンジンシティのポスター <br>２行目", ""],
