@@ -11,9 +11,7 @@ new Vue({
     searchGalar: '',   // 入力された文字列を格納
   },
   mounted () {
-    axios
-      .get('https://script.google.com/macros/s/AKfycbyn13k9gfMfxC6MK1biwt8Kneu2xLyYSQm9lEZSCLoGpuLZmPknASfH2GUGZT6KHB6r/exec', { crossDomain: true })
-      .then(response => {this.results = response.data.results})
+    axios.get('https://script.google.com/macros/s/AKfycbyn13k9gfMfxC6MK1biwt8Kneu2xLyYSQm9lEZSCLoGpuLZmPknASfH2GUGZT6KHB6r/exec', { crossDomain: true }).then(response => {this.results = response.data})
   },
 
   computed: {
