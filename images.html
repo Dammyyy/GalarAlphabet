@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>ガラル文字データベース</title>
+		<link rel="stylesheet"href="./css/style.css">
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-187919859-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-187919859-1');
+		</script>
+
+	</head>
+	<body>
+
+	<div>
+		<div>
+			<h1 class="title"><img src="imgs/logo.jpg" height="50" style="vertical-align: bottom">
+				ガラル文字データベース<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-hashtags="ガラル文字">ツイート</a>
+				<script>
+					! function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0],
+							p = /^http:/.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + '://platform.twitter.com/widgets.js';
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, 'script', 'twitter-wjs');
+				</script>
+			</h1>
+		</div>
+		<div class="alphabet">
+			<p>大文字：<span class="galar">ABCDEFGHIJKLMNOeQRSTUVWXYZ</span></p>
+			<p>小文字：<span class="galar">acdfghiklmnopqru</span></p>
+		</div>
+
+		<div class="comment">
+			<p>ガラル地方で発見した文字を表にしました。</p>
+			<p>情報などコメントが御座いましたら<a href="https://twitter.com/Damo_drums">Twitter</a>まで</p>
+		</div>
+
+
+		<div id="app">
+
+			<div class="searches">
+ 		    <div class="search">
+					<span>検索：</span>
+					<input type="text" v-model="searchGalar" placeholder="Search">
+		    </div>
+		    <div class="reset">
+					<span><button @click="resetting()">リセット</button></span>
+		    </div>
+			</div>
+
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<!-- <th @click="sortBy('Id')" :class="sortedClass('Id')"></th> -->
+							<th @click="sortBy('Image')" :class="sortedClass('Image')">スクショ</th>
+							<th @click="sortBy('Galar')" :class="sortedClass('Galar')">ガラル文字</th>
+							<!-- <th @click="sortBy('Comment')" :class="sortedClass('Comment')">コメント</th> -->
+							<!-- <th @click="sortBy('Type')" :class="sortedClass('Type')">分類</th> -->
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr v-for="row in eventedAction">
+							<!-- <td>{{row.Id}}</td> -->
+							<td><img :src="row.Image" :alt="row.Alt"></td>
+							<td>
+								<p class="galar">{{row.Galar}}</p>
+								<p>{{row.Alt}}</p>
+							</td>
+							<!-- <td>{{row.Comment}}</td> -->
+							<!-- <td>{{row.Type}}</td> -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		</div>
+			<div class="comment">
+				<h2>著作権について</h2>
+				<p>このページでは、株式会社ゲームフリークを代表とする<br>共同著作者が権利を所有する画像を利用しております。</p>
+				<p>当該画像の転載・配布は禁止いたします。</p>
+				<p>その他、掲載している画像・台詞は、著作権法第32条に基づく引用であり、<br>著作権は作者及び出版社にあります。</p>
+				<p>また、自作フォントにつきましても、転載・配布は禁止いたします。</p>
+				<p>本フォントにより生じた損害に関しては責任を負いません。</p>
+			</div>
+
+		<footer>
+			<div>Copyright(c) ダモ ：<a href="https://twitter.com/Damo_drums">@Damo_drums</a></div>
+		</footer>
+
+	</body>
+		<script src="js/images.js"></script>
+	<style></style>
+</html>
+
