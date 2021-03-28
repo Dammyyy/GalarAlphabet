@@ -89,12 +89,18 @@ table tr:nth-child(odd) {
 table .galar {
 	text-align: center;
 	padding: 6px 5px;
-	border: 1px #666666 solid;
+	/*border: 1px #666666 solid;*/
 	white-space: nowrap;
 	font-size: 20px;
 	font-weight: bold;
 }
 
+table tbody img {
+	width: 500px;
+}
+table tr td:first-child {
+	width: 530px;
+}
 
 
 /*フッター*/
