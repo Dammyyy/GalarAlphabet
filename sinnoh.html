@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-56PRC9NL');</script>
+		<!-- End Google Tag Manager -->
+		<meta charset="UTF-8">
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="シンオウ文字データベース" />
+		<meta property="og:description" content="【ダイパリメイク】シンオウ地方で確認された文字のまとめ" />
+		<meta property="og:url" content="https://dammyyy.github.io/SinnohAlphabet/" />
+		<meta property="og:site_name" content="シンオウ文字データベース" />
+		<meta property="og:image" content="https://dammyyy.github.io/SinnohAlphabet/imgs/twitter_card.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@Damo_drums" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+		<title>シンオウ文字データベース</title>
+		<link rel="stylesheet"href="./assets/css/sinnoh/style.css">
+		<link rel="stylesheet"href="./assets/css/jquery.fancybox.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56PRC9NL"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="wrapper">
+			<header>
+				<div class="header_inner">
+					<h1 class="title">シンオウ文字データベース</h1>
+					<div class="header_contents clearfix">
+						<p class="description">
+							2021年11月19日発売の『ポケットモンスター ブリリアントダイヤモンド・シャイニングパール』
+							<br>
+							<br>
+							その舞台となるシンオウ地方で発見した文字を表にしました。
+							<br>
+							情報などコメントが御座いましたら<a href="https://twitter.com/damo_drums">twitter</a>までご連絡ください。
+						</p>
+					</div>
+				</div>
+			</header>
+
+			<div id="linkmenu">
+				<ul class="linkmenu_inner clearfix">
+					<li><a href="./galar.html">ガラル文字データベース</a></li>
+					<li><a href="./sinnoh.html">シンオウ文字データベース</a></li>
+					<li><a href="./hisui.html">ヒスイ文字データベース</a></li>
+					<li><a href="./kalos.html">カロス文字データベース</a></li>
+				</ul>
+			</div>
+
+			<div id="content">
+				<div id="main">
+					<div id="app">
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<!-- <th @click="sortBy('Id')" :class="sortedClass('Id')"></th> -->
+										<th @click="sortBy('Image')" :class="sortedClass('Image')">SS</th>
+										<th @click="sortBy('Sinnoh')" :class="sortedClass('Sinnoh')">シンオウ文字<br>補足</th>
+										<!-- <th @click="sortBy('Comment')" :class="sortedClass('Comment')">コメント</th> -->
+										<!-- <th @click="sortBy('Type')" :class="sortedClass('Type')">分類</th> -->
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr v-for="row in eventedAction">
+										<!-- <td>{{row.Id}}</td> -->
+										<td>
+											<a data-fancybox="gallery" :href="row.Image" :data-caption="row.Alt">
+												<img :src="row.Image" :alt="row.Alt">
+											</a>
+										</td>
+										<td>
+											<p class="sinnoh">{{row.Sinnoh}}</p>
+											<p class="text">{{row.Alt}}<br>{{row.Text}}</p>
+										</td>
+										<!-- <td>{{row.Comment}}</td> -->
+										<!-- <td>{{row.Type}}</td> -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<div class="footer_inner clearfix">
+					<div class="footer_box left footermenu">
+						<h3>関連リンク</h3>
+						<div class="footer_contents">
+							<ul>
+								<li><a href="./galar.html">ガラル文字データベース</a></li>
+								<li><a href="./sinnoh.html">シンオウ文字データベース</a></li>
+								<li><a href="./hisui.html">ヒスイ文字データベース</a></li>
+								<li><a href="./kalos.html">カロス文字データベース</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer_box left">
+						<h3>著作権について</h3>
+						<div class="footer_contents">
+							<ul>
+								<li>このページでは、株式会社ポケモンを代表とする共同著作者が権利を所有する画像を利用しております。当該画像の転載・配布は禁止いたします。</li>
+								<li>その他、掲載している画像・台詞は、著作権法第32条に基づく引用であり、著作権は作者及び出版社にあります。</li>
+								<li>また、自作フォントにつきましても、転載・配布は禁止いたします。本フォントにより生じた損害に関しては責任を負いません。</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+			<div id="copyright">
+				<div id="copyright_inner" class="clearfix">
+					<p class="copyright_text">
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="./assets/js/jquery.fancybox.js"></script>
+		<script src="./assets/js/sinnoh/index.js"></script>
+	</body>
+
+</html>
+

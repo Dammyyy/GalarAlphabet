@@ -1,154 +1,133 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-56PRC9NL');</script>
+		<!-- End Google Tag Manager -->
 		<meta charset="UTF-8">
 		<title>ガラル文字データベース</title>
-		<link rel="stylesheet"href="./css/style.css">
+		<link rel="stylesheet" href="./assets/css/galar/style.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-187919859-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-187919859-1');
-		</script>
-
 	</head>
 	<body>
-
-	<div>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56PRC9NL"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<div>
-			<h1 class="title"><img src="imgs/logo.jpg" height="50" style="vertical-align: bottom">
-				ガラル文字データベース<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-hashtags="ガラル文字">ツイート</a>
-				<script>
-					! function(d, s, id) {
-						var js, fjs = d.getElementsByTagName(s)[0],
-							p = /^http:/.test(d.location) ? 'http' : 'https';
-						if (!d.getElementById(id)) {
-							js = d.createElement(s);
-							js.id = id;
-							js.src = p + '://platform.twitter.com/widgets.js';
-							fjs.parentNode.insertBefore(js, fjs);
-						}
-					}(document, 'script', 'twitter-wjs');
-				</script>
-			</h1>
-		</div>
-		<div class="alphabet">
-			<p>大文字：<span class="galar">ABCDEFGHIJKLMNOeQRSTUVWXYZ</span></p>
-			<p>小文字：<span class="galar">acdfghiklmnopqru</span></p>
-		</div>
+			<div>
+				<h1 class="title">
+					<img src="./assets/images/logo.jpg" height="50" style="vertical-align: bottom">ガラル文字データベース
+				</h1>
+			</div>
+			<div class="alphabet">
+				<p>大文字：<span class="galar">ABCDEFGHIJKLMNOeQRSTUVWXYZ</span></p>
+				<p>小文字：<span class="galar">acdfghiklmnopqru</span></p>
+			</div>
 
-		<div class="comment">
-			<p>ガラル地方で発見した文字を表にしました。</p>
-			<p>情報などコメントが御座いましたら<a href="https://twitter.com/Damo_drums">Twitter</a>まで</p>
-		</div>
+			<div class="comment">
+				<p>ガラル地方で発見した文字を表にしました。</p>
+				<p>情報などコメントが御座いましたら<a href="https://twitter.com/Damo_drums">Twitter</a>まで</p>
+			</div>
 
+			<div id="app">
+				<div class="searches">
 
-		<div id="app">
-
-			<div class="searches">
-<!-- 				<div class="class">
-					<span>分類：</span>
-					<span v-for="type in types">
-						<input type="checkbox" v-bind:value="type" v-model="selectTypes">{{ type }}
-					</span>
+					<div class="search">
+						<span>検索：</span>
+						<input type="text" v-model="searchGalar" placeholder="Search">
+					</div>
+					<div class="reset">
+						<span><button @click="resetting()">リセット</button></span>
+					</div>
 				</div>
- -->
- 		    <div class="search">
-					<span>検索：</span>
-					<input type="text" v-model="searchGalar" placeholder="Search">
-		    </div>
-		    <div class="reset">
-					<span><button @click="resetting()">リセット</button></span>
-		    </div>
+
+				<div>
+					<table>
+						<thead>
+							<tr>
+								<!-- <th @click="sortBy('Id')" :class="sortedClass('Id')"></th> -->
+								<th @click="sortBy('Galar')" :class="sortedClass('Galar')">ガラル文字</th>
+								<th @click="sortBy('Trance')" :class="sortedClass('Trance')">推測</th>
+								<th @click="sortBy('Comment')" :class="sortedClass('Comment')">コメント</th>
+								<th @click="sortBy('Type')" :class="sortedClass('Type')">分類</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr v-for="row in eventedAction">
+								<!-- <td>{{row.Id}}</td> -->
+								<td class="galar">{{row.Galar}}</td>
+								<td>{{row.Trance}}</td>
+								<td>{{row.Comment}}</td>
+								<td>{{row.Type}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			<div>
-				<table>
-					<thead>
-						<tr>
-							<!-- <th @click="sortBy('Id')" :class="sortedClass('Id')"></th> -->
-							<th @click="sortBy('Galar')" :class="sortedClass('Galar')">ガラル文字</th>
-							<th @click="sortBy('Trance')" :class="sortedClass('Trance')">推測</th>
-							<th @click="sortBy('Comment')" :class="sortedClass('Comment')">コメント</th>
-							<th @click="sortBy('Type')" :class="sortedClass('Type')">分類</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr v-for="row in eventedAction">
-							<!-- <td>{{row.Id}}</td> -->
-							<td class="galar">{{row.Galar}}</td>
-							<td>{{row.Trance}}</td>
-							<td>{{row.Comment}}</td>
-							<td>{{row.Type}}</td>
-						</tr>
-					</tbody>
-				</table>
+				<h3>薄明の翼５話の書類の文面</h3>
+				<div class="galar">
+					<p>
+						Mdrg<br>
+						<br>
+						BMSDAFIAKORAWSVEUKLEXREeNqarko<br>
+						OYFREHFLUNIHCAKFMVSLIeAHIBgkrfUrkqd<br>
+						IV ECXeNKeSTKBLKUIe IMFSFHLCRSEKBe<br>
+						ASKXBeSVHeRakikmdalihakkofkqhcao<br>
+						EXREeNqarkoRonmlkqdhgrlkdcdicrdra<br>
+						BMSDAFIAKORAWSVEUKLEXREeNqarkoVE<br>
+						CAEFBReYITKRCLS SNODWeLMeYCkonrqlila<br>
+						Xcgkdlfokicrdralonahdokqiaiakdaonlk<br>
+						N CRS oROqark Snoorkdaofakdkolaicidk<br>
+						fmkdkolaicidkXBeSVHeRakikmdalihakkof<br>
+						NqarkoVEUKLEXREeEeNqarkoRonmlkqdhkqhcao<br>
+						SnoorkdaoDAFIRS oRoqark AKORAWSVEiakd<br>
+						SNODWeLMeYCkonrqlilaFBReYITKRCLSaonlk<br>
+						grlkdcdicrdrakdlfokicrdralonahdokqia<br>
+						<br>
+						M<br>
+						<br>
+						konrcIFLUNIHCAKFMVSLIeAHIBgkrfU<br>
+						IVNqarkgkdeSidLKUIeIMFSFHLCRSE<br>
+						ASKXBeSVHeRakdaodaliXeNKoRofkqh<br>
+						kdlfokicrWSBqdhgBMSDronmlklkdcd<br>
+						EC oRoqAKTKBoorkEUKLEXREeNqarkoV<br>
+						CAEFBReYITKRCLSSNODWeDAFIOYFRE<br>
+						XcqdAlfokicrdralonahdokqiaiakd<br>
+						N CRS oRoqark Snoorkdaofmkdkolai<br>
+						XBeSV<br>
+						NqarkoVEUKLEXREeEeNqarkoRonmlkq<br>
+						DAFIRSarkSnFIAKORLMeYCORAWSVBMS<br>
+						SMODWeLMeYCkonrqlilaFBReYITKRC<br>
+						Grlkdcdicrdrakolcifmkddralonah<br>
+						SNODQ<br>
+						Nqarko
+				</div>
 			</div>
-		</div>
-
-		<div>
-			<h3>薄明の翼５話の書類の文面</h3>
-			<div class="galar">
-				<p>
-					Mdrg<br>
-					<br>
-					BMSDAFIAKORAWSVEUKLEXREeNqarko<br>
-					OYFREHFLUNIHCAKFMVSLIeAHIBgkrfUrkqd<br>
-					IV ECXeNKeSTKBLKUIe IMFSFHLCRSEKBe<br>
-					ASKXBeSVHeRakikmdalihakkofkqhcao<br>
-					EXREeNqarkoRonmlkqdhgrlkdcdicrdra<br>
-					BMSDAFIAKORAWSVEUKLEXREeNqarkoVE<br>
-					CAEFBReYITKRCLS SNODWeLMeYCkonrqlila<br>
-					Xcgkdlfokicrdralonahdokqiaiakdaonlk<br>
-					N CRS oROqark Snoorkdaofakdkolaicidk<br>
-					fmkdkolaicidkXBeSVHeRakikmdalihakkof<br>
-					NqarkoVEUKLEXREeEeNqarkoRonmlkqdhkqhcao<br>
-					SnoorkdaoDAFIRS oRoqark AKORAWSVEiakd<br>
-					SNODWeLMeYCkonrqlilaFBReYITKRCLSaonlk<br>
-					grlkdcdicrdrakdlfokicrdralonahdokqia<br>
-					<br>
-					M<br>
-					<br>
-					konrcIFLUNIHCAKFMVSLIeAHIBgkrfU<br>
-					IVNqarkgkdeSidLKUIeIMFSFHLCRSE<br>
-					ASKXBeSVHeRakdaodaliXeNKoRofkqh<br>
-					kdlfokicrWSBqdhgBMSDronmlklkdcd<br>
-					EC oRoqAKTKBoorkEUKLEXREeNqarkoV<br>
-					CAEFBReYITKRCLSSNODWeDAFIOYFRE<br>
-					XcqdAlfokicrdralonahdokqiaiakd<br>
-					N CRS oRoqark Snoorkdaofmkdkolai<br>
-					XBeSV<br>
-					NqarkoVEUKLEXREeEeNqarkoRonmlkq<br>
-					DAFIRSarkSnFIAKORLMeYCORAWSVBMS<br>
-					SMODWeLMeYCkonrqlilaFBReYITKRC<br>
-					Grlkdcdicrdrakolcifmkddralonah<br>
-					SNODQ<br>
-					Nqarko
-			</div>
-		</div>
 
 		</div>
-			<div class="comment">
-				<h2>著作権について</h2>
-				<p>このページでは、株式会社ゲームフリークを代表とする<br>共同著作者が権利を所有する画像を利用しております。</p>
-				<p>当該画像の転載・配布は禁止いたします。</p>
-				<p>その他、掲載している画像・台詞は、著作権法第32条に基づく引用であり、<br>著作権は作者及び出版社にあります。</p>
-				<p>また、自作フォントにつきましても、転載・配布は禁止いたします。</p>
-				<p>本フォントにより生じた損害に関しては責任を負いません。</p>
-			</div>
+		<div class="comment">
+			<h2>著作権について</h2>
+			<p>このページでは、株式会社ゲームフリークを代表とする<br>共同著作者が権利を所有する画像を利用しております。</p>
+			<p>当該画像の転載・配布は禁止いたします。</p>
+			<p>その他、掲載している画像・台詞は、著作権法第32条に基づく引用であり、<br>著作権は作者及び出版社にあります。</p>
+			<p>また、自作フォントにつきましても、転載・配布は禁止いたします。</p>
+			<p>本フォントにより生じた損害に関しては責任を負いません。</p>
+		</div>
 
 		<footer>
 			<div></div>
 		</footer>
 
 	</body>
-		<script src="js/script.js"></script>
+		<script src="./assets/js/galar/script.js"></script>
 	<style></style>
 </html>
 
