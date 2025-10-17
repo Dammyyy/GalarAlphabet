@@ -19,10 +19,12 @@
 		<meta name="twitter:site" content="@Damo_drums" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<title>シンオウ文字データベース</title>
-		<link rel="stylesheet"href="./assets/css/sinnoh/style.css">
-		<link rel="stylesheet"href="./assets/css/jquery.fancybox.min.css">
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+		<link rel="stylesheet" href="./assets/css/common.css">
+		<link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 	</head>
 
 	<body>
@@ -58,38 +60,7 @@
 
 			<div id="content">
 				<div id="main">
-					<div id="app">
-						<div>
-							<table>
-								<thead>
-									<tr>
-										<!-- <th @click="sortBy('Id')" :class="sortedClass('Id')"></th> -->
-										<th @click="sortBy('Image')" :class="sortedClass('Image')">SS</th>
-										<th @click="sortBy('Sinnoh')" :class="sortedClass('Sinnoh')">シンオウ文字<br>補足</th>
-										<!-- <th @click="sortBy('Comment')" :class="sortedClass('Comment')">コメント</th> -->
-										<!-- <th @click="sortBy('Type')" :class="sortedClass('Type')">分類</th> -->
-									</tr>
-								</thead>
-
-								<tbody>
-									<tr v-for="row in eventedAction">
-										<!-- <td>{{row.Id}}</td> -->
-										<td>
-											<a data-fancybox="gallery" :href="row.Image" :data-caption="row.Alt">
-												<img :src="row.Image" :alt="row.Alt">
-											</a>
-										</td>
-										<td>
-											<p class="sinnoh">{{row.Sinnoh}}</p>
-											<p class="text">{{row.Alt}}<br>{{row.Text}}</p>
-										</td>
-										<!-- <td>{{row.Comment}}</td> -->
-										<!-- <td>{{row.Type}}</td> -->
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
+						<div id="app"></div>
 				</div>
 			</div>
 
@@ -128,7 +99,12 @@
 		</div>
 
 		<script src="./assets/js/jquery.fancybox.js"></script>
+		<script src="./assets/js/sinnoh/items.js"></script>
 		<script src="./assets/js/sinnoh/index.js"></script>
+		<script>
+			const ReactDOMClient = window.ReactDOMClient || window.ReactDOM;
+			ReactDOMClient.createRoot(document.getElementById('app')).render(React.createElement(window.SinnohApp));
+		</script>
 	</body>
 
 </html>

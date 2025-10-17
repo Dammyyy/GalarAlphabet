@@ -1,10 +1,10 @@
-// ヒスイ文字データベース用Reactコンポーネント
+// ガラル文字データベース用Reactコンポーネント
 const { useMemo, useState, useEffect } = React;
 
-function KalosApp() {
-  const [items, setItems] = useState(() => (window.KalosItems || []).slice());
+function GalarApp() {
+  const [items, setItems] = useState(() => (window.GalarItems || []).slice());
   const [sort, setSort] = useState({ key: '', isAsc: false });
-  const [searchKalos, setSearchKalos] = useState('');
+  const [searchGalar, setSearchGalar] = useState('');
 
   const list = useMemo(() => {
     let next = items.slice();
@@ -15,11 +15,11 @@ function KalosApp() {
         return (av === bv ? 0 : av > bv ? 1 : -1) * (sort.isAsc ? 1 : -1);
       });
     }
-    if (searchKalos) {
-      next = next.filter((element) => String(element.Kalos || '').indexOf(searchKalos) > -1);
+    if (searchGalar) {
+      next = next.filter((element) => String(element.Galar || '').indexOf(searchGalar) > -1);
     }
     return next;
-  }, [items, sort, searchKalos]);
+  }, [items, sort, searchGalar]);
 
   const sortBy = (key) => {
     setSort((prev) => ({ key, isAsc: prev.key === key ? !prev.isAsc : false }));
@@ -29,8 +29,8 @@ function KalosApp() {
 
   const resetting = () => {
     setSort({ key: '', isAsc: false });
-    setSearchKalos('');
-    setItems((window.KalosItems || []).slice());
+    setSearchGalar('');
+    setItems((window.GalarItems || []).slice());
   };
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function KalosApp() {
       React.createElement('thead', null,
         React.createElement('tr', null,
           React.createElement('th', { onClick: () => sortBy('Image'), className: sortedClass('Image') }, 'SS'),
-          React.createElement('th', { onClick: () => sortBy('Kalos'), className: sortedClass('Kalos') }, 'カロス文字\n補足')
+          React.createElement('th', { onClick: () => sortBy('Galar'), className: sortedClass('Galar') }, 'ガラル文字<br>補足')
         )
       ),
       React.createElement('tbody', null,
@@ -65,7 +65,6 @@ function KalosApp() {
             ),
             React.createElement('td', null,
               React.createElement('p', { className: 'galar' }, row.Galar),
-              React.createElement('p', { className: 'kalos' }, row.Kalos),
               React.createElement('p', { className: 'text' }, row.Alt),
               React.createElement('p', { className: 'text' }, row.Text)
             )
@@ -77,4 +76,4 @@ function KalosApp() {
 }
 
 // グローバルに公開
-window.KalosApp = KalosApp;
+window.GalarApp = GalarApp;

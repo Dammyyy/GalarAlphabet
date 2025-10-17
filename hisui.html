@@ -26,10 +26,12 @@
 		<meta name="twitter:site" content="@Damo_drums" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<title>ヒスイ文字データベース</title>
-		<link rel="stylesheet"href="./assets/css/hisui/style.css">
-		<link rel="stylesheet"href="./assets/css/jquery.fancybox.min.css">
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+		<link rel="stylesheet" href="./assets/css/common.css">
+		<link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 	</head>
 
 	<body>
@@ -69,32 +71,7 @@
 
 			<div id="content">
 				<div id="main">
-					<div id="app">
-						<table>
-							<thead>
-								<tr>
-									<th @click="sortBy('Image')" :class="sortedClass('Image')">SS</th>
-									<th @click="sortBy('Hisui')" :class="sortedClass('Hisui')">ヒスイ文字<br>補足</th>
-								</tr>
-							</thead>
-
-							<tbody>
-								<tr v-for="row in eventedAction">
-									<td>
-										<a data-fancybox="gallery" :href="row.Image" :data-caption="row.Alt">
-											<img :src="row.Image" :alt="row.Alt">
-										</a>
-									</td>
-									<td>
-										<p class="galar">{{row.Galar}}</p>
-										<p class="hisui">{{row.Hisui}}</p>
-										<p class="text">{{row.Alt}}</p>
-										<p class="text">{{row.Text}}</p>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<div id="app"></div>
 				</div>
 			</div>
 
@@ -135,7 +112,13 @@
 		</div>
 
 		<script src="./assets/js/jquery.fancybox.js"></script>
+		<script src="./assets/js/hisui/items.js"></script>
 		<script src="./assets/js/hisui/index.js"></script>
+		<script>
+			// Reactアプリをマウント
+			const ReactDOMClient = window.ReactDOMClient || window.ReactDOM;
+			ReactDOMClient.createRoot(document.getElementById('app')).render(React.createElement(window.HisuiApp));
+		</script>
 	</body>
 
 </html>

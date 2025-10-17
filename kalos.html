@@ -19,8 +19,9 @@
 		<meta name="twitter:site" content="@Damo_drums" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<title>カロス文字データベース</title>
-		<link rel="stylesheet"href="./assets/css/kalos/style.css">
-		<link rel="stylesheet"href="./assets/css/jquery.fancybox.min.css">
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+		<link rel="stylesheet" href="./assets/css/common.css">
+		<link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -102,6 +103,10 @@
 		<script src="./assets/js/jquery.fancybox.js"></script>
 		<script src="./assets/js/kalos/items.js"></script>
 		<script src="./assets/js/kalos/index.js"></script>
+		<script>
+			const ReactDOMClient = window.ReactDOMClient || window.ReactDOM;
+			ReactDOMClient.createRoot(document.getElementById('app')).render(React.createElement(window.KalosApp));
+		</script>
 	</body>
 
 </html>
