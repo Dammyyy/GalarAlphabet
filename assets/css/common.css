@@ -26,6 +26,12 @@ body {
 	text-align: center;
 }
 
+.inner {
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 /* ヘッダー */
 header {
 	width: 100%;
@@ -39,7 +45,6 @@ header {
 	width: 960px;
 	margin: 0 auto;
 	text-align: left;
-	padding: 0 8px;
 }
 
 h1 {
@@ -85,7 +90,6 @@ header .description a {
 .linkmenu_inner {
 	width: 960px;
 	margin: 0 auto;
-	padding: 0 8px;
 	text-align: left;
 }
 
@@ -105,7 +109,6 @@ li {
 .linkmenu_inner li a:visited {
 	color: #fff;
 	font-size: 14px;
-	text-decoration: none;
 }
 
 .linkmenu_inner li a:hover,
@@ -114,7 +117,12 @@ li {
 }
 
 .footermenu {
-	display: none;
+	/*display: none;*/
+}
+.footer_contents ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 /* コンテンツ */
@@ -175,24 +183,22 @@ table tr:nth-child(odd) {
 }
 
 table tbody img {
-	width: 500px;
+	width: 100%;
 }
 
 table tr td:first-child {
-	width: 530px;
+    width: 50%;
 }
 
 /* フッター */
 footer {
-	width: 100%;
-	padding: 20px 0;
+	padding: 20px 10px;
 	background: #ccc;
 	text-align: center;
 	border-top: 1px solid #aaa;
 }
 
 footer h3 {
-	width: 100%;
 	font-size: 16px;
 	font-weight: bold;
 	padding: 10px 0;
@@ -213,8 +219,7 @@ footer h3 {
 }
 
 .footer_contents {
-	margin-bottom: 40px;
-	margin-left: 10px;
+	margin: 0 10px 40px;
 }
 
 .footer_contents li {
@@ -264,6 +269,7 @@ footer h3 {
 }
 
 /* フォントクラス */
+.kalos,
 .galar {
 	font-family: "Galarfont_1" !important;
 	font-size: 40px;
@@ -339,7 +345,7 @@ th.sorted.asc::after {
 	}
 
 	#linkmenu {
-		display: none;
+		/*display: none;*/
 	}
 
 	#content {
@@ -383,8 +389,7 @@ th.sorted.asc::after {
 	}
 
 	.footer_contents {
-		margin-bottom: 20px;
-		margin-left: 10px;
+		margin: 0 0 20px;
 	}
 
 	#copyright_inner {

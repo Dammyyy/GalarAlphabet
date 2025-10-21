@@ -1,80 +1,268 @@
-// ヒスイ文字データベース用Reactコンポーネント
-const { useMemo, useState, useEffect } = React;
+const items = [
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/story_01.webp'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621215300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '_ODAB', 'Alt': '', 'Text': 'ミアレ', 'Group': '', 'Image': './assets/images/kalos/2025101621222400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621232000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': 'ポスター', 'Image': './assets/images/kalos/2025101621234400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621235600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621240800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621241500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621244200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621254000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621260300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621261600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621264800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621270200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621272500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621273900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621282300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621284800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621314600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621320700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621323700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621343900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621361500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621373100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101621523600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622011000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622095100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622131200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622133100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622134300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622134800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622140100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622141100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622144200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622145500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622163900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622165000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622170900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622174600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622175800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622180400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622185400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622192200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622223500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622225100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622230100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622231700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622245700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622250300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622251500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622261800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622263400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622265500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622271100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622272000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622281100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622284700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622285600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622291300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622292500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622293000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622305500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622321000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622321100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622332200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622335900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622341000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622345600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622353300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622354500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622361400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622363300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622364500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622370400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622373800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622381800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622382200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622383400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622384300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622393400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622402800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622423900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622433500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622494200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622495900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622503000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622523600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622525400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622544400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622545200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622545600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622545900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622553400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622571800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622572800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622573300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101622574600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623004500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623081300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623083400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623084300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623085800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623094700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623112200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623114500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623120700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623123200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623123700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623124100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623124800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623125400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623125900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623132200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623133300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623133600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623135000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623143300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623213300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623235800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623282100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623453700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623480900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623521300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101623525000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700042500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700051200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700094900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700100200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700102500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700103500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700105500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700191600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700192900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700195000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700201600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700203300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700203900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700204700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700211700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700212600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700214100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700214800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700220400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700220700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700221800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700223200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700224600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700232600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700244800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700284600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700290400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700293600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700303700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700350800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700365200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700370800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700374400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700381200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700400600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700403700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700412200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700414900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700421400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700433700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700441200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700474700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700482400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700532900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101700533700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701044800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701070500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701073600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701074700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701075800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701084600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701085500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701102800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701112000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701121400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701144900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701154000-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701161100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701165400-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701170600-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701171900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101701173500-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101713550900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101713552100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101713553300-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101713554700-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714025100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714030200-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714031100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714032900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714033800-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714061900-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714064100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+    { 'Id': '', 'Kalos': '', 'Alt': '', 'Text': '', 'Group': '', 'Image': './assets/images/kalos/2025101714065100-D30A1E83A76029FCCC1E3AC4EF5B7C89L.jpg'},
+];
 
-function KalosApp() {
-  const [items, setItems] = useState(() => (window.KalosItems || []).slice());
-  const [sort, setSort] = useState({ key: '', isAsc: false });
-  const [searchKalos, setSearchKalos] = useState('');
+new Vue({
+  el: '#app',
+  data: {
+    items: items,
+    sort: {
+      key: '',
+      isAsc: false
+    },
+    searchKalos: '',
+  },
+  computed: {
+    eventedAction: function() {
+      let list = this.items.slice();
 
-  const list = useMemo(() => {
-    let next = items.slice();
-    if (sort.key) {
-      next.sort((a, b) => {
-        const av = a[sort.key];
-        const bv = b[sort.key];
-        return (av === bv ? 0 : av > bv ? 1 : -1) * (sort.isAsc ? 1 : -1);
-      });
-    }
-    if (searchKalos) {
-      next = next.filter((element) => String(element.Kalos || '').indexOf(searchKalos) > -1);
-    }
-    return next;
-  }, [items, sort, searchKalos]);
-
-  const sortBy = (key) => {
-    setSort((prev) => ({ key, isAsc: prev.key === key ? !prev.isAsc : false }));
-  };
-
-  const sortedClass = (key) => (sort.key === key ? `sorted ${sort.isAsc ? 'asc' : 'desc'}` : '');
-
-  const resetting = () => {
-    setSort({ key: '', isAsc: false });
-    setSearchKalos('');
-    setItems((window.KalosItems || []).slice());
-  };
-
-  useEffect(() => {
-    // Twitterウィジェットの読み込み
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        p = /^http:/.test(d.location) ? 'http' : 'https';
-      if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
+      if(this.sort.key) {
+        list.sort((a, b) => {
+          a = a[this.sort.key];
+          b = b[this.sort.key];
+          return (a === b ? 0 : a > b ? 1 : -1) * (this.sort.isAsc ? 1 : -1);
+        });
       }
-    })(document, 'script', 'twitter-wjs');
-  }, []);
 
-  return React.createElement('div', null,
-    React.createElement('table', null,
-      React.createElement('thead', null,
-        React.createElement('tr', null,
-          React.createElement('th', { onClick: () => sortBy('Image'), className: sortedClass('Image') }, 'SS'),
-          React.createElement('th', { onClick: () => sortBy('Kalos'), className: sortedClass('Kalos') }, 'カロス文字\n補足')
-        )
-      ),
-      React.createElement('tbody', null,
-        list.map((row) => (
-          React.createElement('tr', { key: row.Id },
-            React.createElement('td', null,
-              React.createElement('a', { 'data-fancybox': 'gallery', href: row.Image, 'data-caption': row.Alt },
-                React.createElement('img', { src: row.Image, alt: row.Alt })
-              )
-            ),
-            React.createElement('td', null,
-              React.createElement('p', { className: 'galar' }, row.Galar),
-              React.createElement('p', { className: 'kalos' }, row.Kalos),
-              React.createElement('p', { className: 'text' }, row.Alt),
-              React.createElement('p', { className: 'text' }, row.Text)
-            )
-          )
-        ))
-      )
-    )
-  );
-}
+      if (this.searchKalos) {
+        list = list.filter(element => {
+          return Object.keys(element).some(key => {
+            if(key === 'Kalos') {
+              return element[key].indexOf(this.searchKalos) > -1;
+            }
+          });
+        });
+      }
 
-// グローバルに公開
-window.KalosApp = KalosApp;
+      return list;
+    }   
+  },
+  methods: {
+
+    sortBy: function(key) {
+      this.sort.isAsc = this.sort.key === key ? !this.sort.isAsc : false;
+      this.sort.key = key;
+    },
+    sortedClass: function(key) {
+      return this.sort.key === key ? `sorted ${this.sort.isAsc ? 'asc' : 'desc' }` : '';
+    },
+
+    resetting: function() {
+      this.sort.key = '';
+      this.sort.isAsc = false;
+      this.searchKalos = '';
+      this.items = items;
+    }
+  }
+});
+! function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');
+
+$('p.galar').css({'white-space':'pre-line'});
+$('p.kalos').css({'white-space':'pre-line'});
+$('p.text').css({'white-space':'pre-line'});
